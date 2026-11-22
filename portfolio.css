@@ -45,7 +45,6 @@ nav a:hover, .project-card:hover h2 { text-decoration: underline; text-underline
 .language summary::-webkit-details-marker { display: none; }
 .language[open] summary img { transform: rotate(180deg); }
 .language > span { position: absolute; right: 0; top: 100%; background: var(--paper); padding: 8px 12px; border: 1px solid #aaa5; }
-.dark .site-header { font-size: 20px; }
 .intro {
   display: flex; align-items: flex-end; justify-content: space-between; gap: clamp(24px, 7.94vw, 120px);
   min-height: 592px; padding: 40px var(--gutter);
@@ -134,7 +133,7 @@ footer { padding: 10px var(--gutter); display: grid; gap: 10px; }
 }
 @media (max-width: 700px) {
   :root { --gutter: 14px; }
-  .site-header, .dark .site-header { font-size: 14px; }
+  .site-header { font-size: 14px; }
   .site-header nav, .header-actions { gap: 10px; }
   .site-header nav a { white-space: nowrap; }
   .intro { min-height: 390px; flex-direction: column-reverse; justify-content: end; align-items: flex-start; gap: 26px; padding: 42px var(--gutter) 28px; }
