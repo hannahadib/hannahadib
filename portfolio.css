@@ -50,7 +50,7 @@ nav a:hover, .project-card:hover h2 { text-decoration: underline; text-underline
   display: flex; align-items: flex-end; justify-content: space-between; gap: clamp(24px, 7.94vw, 120px);
   min-height: 592px; padding: 40px var(--gutter);
 }
-.intro h1, .bio p { font: 400 clamp(32px, 3.05vw, 46px)/1.16413 var(--display); letter-spacing: -.02174em; }
+.intro h1, .bio-copy { font: 400 clamp(32px, 3.05vw, 46px)/1.16413 var(--display); letter-spacing: -.02174em; }
 .intro h1 { flex: 1; min-width: 0; }
 .intro h1 a { color: #405cba; }
 .intro h1 a:hover { text-decoration: underline; }
@@ -107,9 +107,19 @@ footer { padding: 10px var(--gutter); display: grid; gap: 10px; }
 .case-gallery { container-type: inline-size; display: grid; gap: 10px; min-width: 0; align-content: start; }
 .case-gallery > * { --unit: calc(100cqw / 940); }
 .about { padding: 0 var(--gutter) 120px; display: flex; flex-direction: column; align-items: flex-start; gap: 24px; }
-.bio { display: grid; grid-template-columns: minmax(0,1fr) 15%; align-items: start; gap: 24px; padding: 40px 0; width: 100%; }
-.bio p { color: var(--muted); margin-top: 4px; }
-.bio > img { width: 100%; aspect-ratio: 222 / 279; object-fit: cover; }
+.bio {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) min(20%, 222px);
+  grid-template-areas: "title portrait" "copy portrait";
+  gap: 4px 24px;
+  align-items: start;
+  width: 100%;
+  padding-block: 40px;
+}
+.bio h1 { grid-area: title; }
+.bio-copy { grid-area: copy; color: var(--muted); }
+.bio-copy p + p { margin-top: 1lh; }
+.bio-portrait { grid-area: portrait; display: block; width: 100%; height: auto; }
 .collection header { padding: 10px var(--gutter) 0; }
 .collection header p { font-size: 18px; max-width: 491px; margin: 4px 0 0; }
 .photo-strip { display: flex; gap: 12px; overflow-x: auto; padding: 16px; scroll-snap-type: x proximity; }
@@ -136,8 +146,12 @@ footer { padding: 10px var(--gutter); display: grid; gap: 10px; }
   .case { display: flex; flex-direction: column; padding-block: 24px; }
   .case-info, .case-gallery { width: 100%; }
   .case-info [data-layer="Definition Term"], .about [data-layer="Definition Term"] { width: 32% !important; }
-  .bio { grid-template-columns: 1fr; padding-block: 24px; }
-  .bio > img { width: 120px; }
+  .bio {
+    grid-template-columns: minmax(0, 1fr) min(28%, 120px);
+    grid-template-areas: "title portrait" "copy copy";
+    gap: 24px 16px;
+    padding-block: 24px;
+  }
   .about { padding-bottom: 48px; }
   .footer-main { gap: 18px; flex-wrap: wrap; padding-block: 22px; }
   .wordmark { width: 100%; }
