@@ -105,6 +105,17 @@ footer { padding: 10px var(--gutter); display: grid; gap: 10px; }
 .case-title h1 { font: 400 clamp(35px,3.38vw,51px)/1.05 var(--display); letter-spacing: -.04em; margin-top: 4px; }
 .case-gallery { container-type: inline-size; display: grid; gap: 10px; min-width: 0; align-content: start; }
 .case-gallery > * { --unit: calc(100cqw / 940); }
+.project-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 24px var(--gutter);
+  font: 400 51px/1.05 var(--display);
+  letter-spacing: -.04em;
+}
+.project-nav a { display: inline-flex; align-items: center; min-height: 44px; }
+.project-nav img { width: 54px; height: 54px; flex: none; }
 .about { padding: 0 var(--gutter) 120px; display: flex; flex-direction: column; align-items: flex-start; gap: 24px; }
 .bio {
   display: grid;
@@ -125,7 +136,7 @@ footer { padding: 10px var(--gutter); display: grid; gap: 10px; }
 .photo { container-type: inline-size; flex: 0 0 min(440px,82vw); scroll-snap-align: center; overflow: hidden; }
 .photo > div { --unit: calc(100cqw / 440); }
 @media (min-width: 900px) {
-  .case-info.sticky { position: sticky; top: 68px; }
+  .case-info { position: sticky; top: 68px; }
 }
 @media (max-width: 1050px) {
   .work-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
@@ -144,6 +155,8 @@ footer { padding: 10px var(--gutter); display: grid; gap: 10px; }
   .caption > div { font-size: 14px; }
   .case { display: flex; flex-direction: column; padding-block: 24px; }
   .case-info, .case-gallery { width: 100%; }
+  .project-nav { font-size: clamp(20px, 5.4vw, 36px); padding-block: 12px; }
+  .project-nav img { width: 1.06em; height: 1.06em; }
   .case-info [data-layer="Definition Term"], .about [data-layer="Definition Term"] { width: 32% !important; }
   .bio {
     grid-template-columns: minmax(0, 1fr) min(28%, 120px);
