@@ -105,6 +105,12 @@ footer { padding: 10px var(--gutter); display: grid; gap: 10px; }
 .case-title h1 { font: 400 clamp(35px,3.38vw,51px)/1.05 var(--display); letter-spacing: -.04em; margin-top: 4px; }
 .case-gallery { container-type: inline-size; display: grid; gap: 10px; min-width: 0; align-content: start; }
 .case-gallery > * { --unit: calc(100cqw / 940); }
+.dogfy-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.dogfy-hero, .dogfy-wide { grid-column: 1 / -1; }
+.dogfy-hero { aspect-ratio: 940 / 641.828; background: #ef6948; }
+.dogfy-mobile-dashboard { position: absolute; left: 76.1%; bottom: 22.4%; width: 15.3%; height: auto; }
+.dogfy-photo { display: block; width: 100%; aspect-ratio: 465 / 317.328; object-fit: cover; }
+.dogfy-wide { aspect-ratio: 940 / 641.828; }
 .project-nav {
   display: flex;
   align-items: center;
